@@ -1,17 +1,40 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDom from "react-dom";
+import "./index.css";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+function BookList() {
+  return (
+    <section>
+      <Book />
+      <Book />
+    </section>
+  );
+}
+
+const Book = () => {
+  return (
+    <article>
+      <Image />
+      <Title />
+      <Author />
+    </article>
+  );
+};
+
+const Image = () => {
+  return (
+    <img
+      src="https://m.media-amazon.com/images/I/41sGqA-HQiL.jpg"
+      alt="AI Book"
+    />
+  );
+};
+
+const Title = () => (
+  <h3>
+    The AI-First Company: How to Compete and Win with Artificial Intelligence
+  </h3>
 );
+const Author = () => <h5> Ash Fontana </h5>;
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+ReactDom.render(<BookList />, document.getElementById("root"));

@@ -6,39 +6,24 @@ function BookList() {
   return (
     <section className="booklist">
       <Book />
-      <Book />
-      <Book />
-      <Book />
     </section>
   );
 }
 
 const Book = () => {
+  const title = "How to Compete and Win with Artificial Intelligence";
   return (
     <article className="book">
-      <Image />
-      <Title />
-      <Author />
+      <img
+        src="https://m.media-amazon.com/images/I/41sGqA-HQiL.jpg"
+        alt="AI Book"
+        width="200"
+        height="300"
+      />
+      <h3>{title}</h3>
+      <h4>Author: Ash Fontana </h4>;
     </article>
   );
 };
-
-const Image = () => {
-  return (
-    <img
-      src="https://m.media-amazon.com/images/I/41sGqA-HQiL.jpg"
-      alt="AI Book"
-      width="200"
-      height="300"
-    />
-  );
-};
-
-const Title = () => (
-  <h3>
-    The AI-First Company: How to Compete and Win with Artificial Intelligence
-  </h3>
-);
-const Author = () => <h5>Author: Ash Fontana </h5>;
 
 ReactDom.render(<BookList />, document.getElementById("root"));

@@ -4,7 +4,9 @@ import "./index.css";
 
 function BookList() {
   return (
-    <section>
+    <section className="booklist">
+      <Book />
+      <Book />
       <Book />
       <Book />
     </section>
@@ -13,7 +15,7 @@ function BookList() {
 
 const Book = () => {
   return (
-    <article>
+    <article className="book">
       <Image />
       <Title />
       <Author />
@@ -26,6 +28,8 @@ const Image = () => {
     <img
       src="https://m.media-amazon.com/images/I/41sGqA-HQiL.jpg"
       alt="AI Book"
+      width="200"
+      height="300"
     />
   );
 };
@@ -35,6 +39,6 @@ const Title = () => (
     The AI-First Company: How to Compete and Win with Artificial Intelligence
   </h3>
 );
-const Author = () => <h5> Ash Fontana </h5>;
+const Author = () => <h5>Author: Ash Fontana </h5>;
 
 ReactDom.render(<BookList />, document.getElementById("root"));

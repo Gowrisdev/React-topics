@@ -36,3 +36,6 @@ body {
 .book h4 {
   color: blue;
 }
+.book p {
+  margin-top: 0.5rem;
+}

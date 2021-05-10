@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Children } from "react";
 import ReactDom from "react-dom";
 import "./index.css";
 
@@ -21,7 +21,12 @@ function BookList() {
         img={firstBook.img}
         title={firstBook.title}
         author={firstBook.author}
-      />
+      >
+        <p>
+          Have spent many years working in the trucking business, and decided
+          now is the right time to branch out and set up your own company?
+        </p>
+      </Book>
       <Book
         img={secondBook.img}
         title={secondBook.title}
@@ -31,12 +36,13 @@ function BookList() {
   );
 }
 
-const Book = ({ img, title, author }) => {
+const Book = ({ img, title, author, children }) => {
   return (
     <article className="book">
       <img src={img} alt="AI Book" width="200" height="300" />
-      <h1>{title}</h1>
+      <h2>{title}</h2>
       <h5>{author} </h5>
+      <p>{children}</p>
     </article>
   );
 };
